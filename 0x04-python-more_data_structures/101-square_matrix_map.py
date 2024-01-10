@@ -1,7 +1,3 @@
 #!/usr/bin/python3
-def complex_delete(my_dict, value):
-    tmp = my_dict.copy()
-    for k, v in tmp.items():
-        if value == v:
-            my_dict.pop(k)
-        return my_dict
+def square_matrix_map(matrix=[]):
+    return list(map(lambda row: list(map(lambda col: col**2, row)), matrix))
