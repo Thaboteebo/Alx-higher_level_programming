@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/pyhton3
 """
 Defines a class Rectangle
 """
@@ -7,18 +7,18 @@ Defines a class Rectangle
 class Rectangle:
     """Representation of a rectangle"""
     def __init__(self, width=0, height=0):
-        """Initialize the rectangle"""
+        """Initialize the new rectangle"""
         self.width = width
         self.height = height
 
     @property
     def width(self):
-        """getter for the private instance attribute width"""
+        """getter for the private instance attritube width"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """setter for private instance attribute width"""
+        """setter for private instance attrribute width"""
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value < 0:
@@ -56,7 +56,10 @@ class Rectangle:
             string += "\n".join("#" * self.__width
                     for j in range(self.__height))
         return string
-
     def __repr__(self):
-        """returns a string representation of the rectaangle for reproduction"""
+        """returns a string representation of the rectangle for reproduction"""
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
+
+    def __del__(self):
+        """Print a message for every deletion of a Rectangle."""
+        print("Bye rectangle...")
