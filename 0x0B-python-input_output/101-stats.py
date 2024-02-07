@@ -5,7 +5,7 @@
 from sys import stdin
 
 
-status_codes = {
+status_codes = (
         '200': 0,
         '301': 0,
         '400': 0,
@@ -14,7 +14,7 @@ status_codes = {
         '404': 0,
         '405': 0,
         '500': 0
-        }
+        )
 
 total_size = i = 0
 
