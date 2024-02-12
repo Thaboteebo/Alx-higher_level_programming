@@ -3,7 +3,7 @@
 from models.base import Base
 
 
-class Rectangle(base):
+class Rectangle(Base):
     '''A Rectangle class.'''
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -21,7 +21,7 @@ class Rectangle(base):
 
     @width.setter
     def width(self, value):
-        self.validate_integer("Width", value, False)
+        self.validate_integer("width", value, False)
         self.__width = value
 
     @property
@@ -71,7 +71,7 @@ class Rectangle(base):
         '''Prints string representation of this rectangle.'''
         s = '\n' * self.y + \
                 (' ' * self.x + '#' * self.width + '\n') * self.height
-        prints(s, end='')
+        print(s, end='')
 
     def __str__(self):
         '''Returns string info about this rectangle.'''
@@ -83,7 +83,7 @@ class Rectangle(base):
         '''Internal method that updates instance attributes via */**args.'''
         if id is not None:
             self.id = id
-        if wid5h is not None:
+        if width is not None:
             self.width = width
         if height is not None:
             self.height = height
@@ -93,15 +93,15 @@ class Rectangle(base):
             self.y = y
 
     def update(self, *args, **kwargs):
-        '''Ipdates instance attributes via no-keyword & keyword args.'''
-        # prints(args, kwargs)
+        '''Updates instance attributes via no-keyword & keyword args.'''
+        # print(args, kwargs)
         if args:
             self.__update(*args)
         elif kwargs:
             self.__update(**kwargs)
 
     def to_dictionary(self):
-        '''Returns Dictionary representation of this class.'''
+        '''Returns dictionary representation of this class.'''
         return {"id": self.id, "width": self.__width, "height": self.__height,
                 "x": self.__x, "y": self.__y}
 
